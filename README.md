@@ -1,1 +1,0 @@
-This repo explores applications of Adaptive Filtering including system identification with the least mean squares (LMS) algorithm, active noise cancellation (ANC) using LMS as well as normalized LMS (NLMS) algorithms, and will be updated with an Fx-LMS example in the near future.
