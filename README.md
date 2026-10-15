@@ -2,15 +2,12 @@
 
 Python implementations of adaptive filtering algorithms for denoising and active noise cancellation (ANC). The examples cover LMS, NLMS, adaptive line enhancement, feedforward noise cancellation, and filtered-x ANC.
 
-The notebooks include saved text and plot outputs, so GitHub can display the figures directly without re-running the cells.
-
 ## Notebooks
 
 - [`01_LMS_Foundations_and_ANC_Demos.ipynb`](01_LMS_Foundations_and_ANC_Demos.ipynb): LMS system identification, adaptive line enhancement, and feedforward noise cancellation.
 - [`02_NLMS_Normalized_Adaptive_Filtering.ipynb`](02_NLMS_Normalized_Adaptive_Filtering.ipynb): NLMS with LMS baselines under changing signal levels.
 - [`03_Filtered_x_Practical_ANC.ipynb`](03_Filtered_x_Practical_ANC.ipynb): FxLMS, FxNLMS, and an HVAC duct ANC case study.
 
-Older combined notebooks are preserved in `archive_exploratory/` for reference.
 
 ## Adaptive Filter Model
 
