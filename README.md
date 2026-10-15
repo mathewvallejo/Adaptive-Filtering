@@ -2,11 +2,13 @@
 
 Python implementations of adaptive filtering algorithms for denoising and active noise cancellation (ANC). The examples cover LMS, NLMS, adaptive line enhancement, feedforward noise cancellation, and filtered-x ANC.
 
+The notebooks include saved text and plot outputs, so GitHub can display the figures directly without re-running the cells.
+
 ## Notebooks
 
-- `01_LMS_Foundations_and_ANC_Demos.ipynb`: LMS system identification, adaptive line enhancement, and feedforward noise cancellation.
-- `02_NLMS_Normalized_Adaptive_Filtering.ipynb`: NLMS with LMS baselines under changing signal levels.
-- `03_Filtered_x_Practical_ANC.ipynb`: FxLMS, FxNLMS, and an HVAC duct ANC case study.
+- [`01_LMS_Foundations_and_ANC_Demos.ipynb`](01_LMS_Foundations_and_ANC_Demos.ipynb): LMS system identification, adaptive line enhancement, and feedforward noise cancellation.
+- [`02_NLMS_Normalized_Adaptive_Filtering.ipynb`](02_NLMS_Normalized_Adaptive_Filtering.ipynb): NLMS with LMS baselines under changing signal levels.
+- [`03_Filtered_x_Practical_ANC.ipynb`](03_Filtered_x_Practical_ANC.ipynb): FxLMS, FxNLMS, and an HVAC duct ANC case study.
 
 Older combined notebooks are preserved in `archive_exploratory/` for reference.
 
@@ -17,7 +19,7 @@ Most examples use an adaptive FIR filter with tap vector
 $$
 \mathbf{x}[n] =
 \begin{bmatrix}
-x[n] & x[n-1] & \cdots & x[n-M+1]
+x[n],\ x[n-1],\ \cdots,\ x[n-M+1]
 \end{bmatrix}^T
 $$
 
@@ -26,7 +28,7 @@ and coefficient vector
 $$
 \mathbf{w}_n =
 \begin{bmatrix}
-w_0[n] & w_1[n] & \cdots & w_{M-1}[n]
+w_0[n],\ w_1[n],\ \cdots,\ w_{M-1}[n]
 \end{bmatrix}^T.
 $$
 
@@ -45,7 +47,7 @@ $$
 The optimization target is mean-square error:
 
 $$
-J(\mathbf{w}) = E\{e^2[n]\}.
+J(\mathbf{w}) = \mathbb{E}[e^2[n]].
 $$
 
 For a stationary input, the optimal Wiener solution satisfies
@@ -57,13 +59,13 @@ $$
 where
 
 $$
-\mathbf{R}_{xx}=E\{\mathbf{x}[n]\mathbf{x}^T[n]\}
+\mathbf{R}_{xx}=\mathbb{E}[\mathbf{x}[n]\mathbf{x}^T[n]]
 $$
 
 and
 
 $$
-\mathbf{p}_{xd}=E\{d[n]\mathbf{x}[n]\}.
+\mathbf{p}_{xd}=\mathbb{E}[d[n]\mathbf{x}[n]].
 $$
 
 In practice these statistics are usually unknown or changing, so LMS-style algorithms use the current sample to approximate the gradient.
@@ -125,7 +127,7 @@ The adaptive filter receives a delayed copy of the same signal:
 $$
 \mathbf{x}_\Delta[n] =
 \begin{bmatrix}
-x[n-\Delta] & x[n-\Delta-1] & \cdots
+x[n-\Delta],\ x[n-\Delta-1],\ \cdots
 \end{bmatrix}^T.
 $$
 
